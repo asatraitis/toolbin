@@ -48,4 +48,8 @@ func main() {
 	}
 	b, _ := json.MarshalIndent(result, "", "  ")
 	fmt.Println(string(b))
+
+	toolDefs := myTools.GetToolDefs()
+	b, _ = json.MarshalIndent(toolDefs, "", "  ")
+	fmt.Println(string(b))
 }

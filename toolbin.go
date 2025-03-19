@@ -36,15 +36,15 @@ func (tb *ToolBin) SetTools(tools []Tool) {
 		tb.tools[tool.Name] = tool
 	}
 }
-func (tb *ToolBin) GetToolDefs() []Tool {
-	toolDefs := []Tool{}
+func (tb *ToolBin) GetToolDefs() []ToolDef {
+	toolDefs := []ToolDef{}
 	if len(tb.tools) < 1 {
 		return toolDefs
 	}
 	tb.mu.RLock()
 	defer tb.mu.RUnlock()
 	for _, tool := range tb.tools {
-		toolDefs = append(toolDefs, tool)
+		toolDefs = append(toolDefs, tool.ToolDef)
 	}
 	return toolDefs
 }

@@ -25,13 +25,13 @@ type ToolDef struct {
 	Parameters *struct2prop.Prop `json:"parameters,omitempty"`
 }
 type Tool struct {
-	*ToolDef
+	ToolDef
 	Exec any
 }
 
 func NewTool(name, description string, toolFunc any) (Tool, error) {
 	var tool = Tool{
-		ToolDef: &ToolDef{},
+		ToolDef: ToolDef{},
 	}
 	if name == "" {
 		return tool, errors.New("missing name")
@@ -78,7 +78,7 @@ func NewTool(name, description string, toolFunc any) (Tool, error) {
 	argStructInstance := reflect.New(argType).Elem()
 
 	// create param schema for input struct
-	params, err := struct2prop.GetProperties(argStructInstance)
+	params, err := struct2prop.GetProperties(argStructInstance.Interface())
 	if err != nil {
 		return tool, err
 	}
