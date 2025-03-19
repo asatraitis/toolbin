@@ -273,45 +273,13 @@ prints:
         }
       }
     }
-          "type": "array",
-          "description": "Values of the thing",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    }
-          "description": "Values of the thing",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    }
-            "type": "string"
-          }
-        }
-      }
-    }
-        }
-      }
-    }
   },
   {
     "name": "thing2",
     "description": "awesome simple thing",
     "parameters": {
-  },
-  {
-    "name": "thing2",
-    "description": "awesome simple thing",
-    "parameters": {
-    "description": "awesome simple thing",
-    "parameters": {
-      "type": "object",
       "type": "object",
       "properties": {
-        "a": {
         "a": {
           "type": "string",
           "description": "just a simple string field"
